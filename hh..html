@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scrolling Image Example</title>
+  <style>
+    
+  </style>
+  <script>
+    window.onload = function() {
+      var image = document.querySelector("img");
+      var select = document.querySelector("select");
+      
+      image.addEventListener("click", function() {
+        select.selectedIndex = 0; // Change the selected index to the top option
+      });
+      
+      image.addEventListener("mousedown", function(event) {
+        if (event.which === 2) {
+          select.selectedIndex = Math.floor(select.options.length / 2); // Change the selected index to the middle option
+        }
+      });
+      
+      image.addEventListener("contextmenu", function(event) {
+        event.preventDefault(); // Prevent the default right-click context menu
+        select.selectedIndex = select.options.length - 1; // Change the selected index to the bottom option
+      });
+    };
+  </script>
+</head>
+<body>
+  <img src="imgs/work.jpg" alt="">
+  <select name="" id="" style="width: 500px; height: 50px;" size="4">
+    <option value="">AAAAAAAAAAAAAAAAAAAAAAAA</option>
+    <option value="">BBBBBBBBBBBBBBBBBBBBBBBB</option>
+    <option value="">CCCCCCCCCCCCCCCCCCCCCCCC</option>
+    <option value="">DDDDDDDDDDDDDDDDDDDDDDDD</option>
+    <option value="">EEEEEEEEEEEEEEEEEEEEEEEE</option>
+    <option value="">FFFFFFFFFFFFFFFFFFFFFFFF</option>
+    <option value="">GGGGGGGGGGGGGGGGGGGGGGGG</option>
+    <option value="">HHHHHHHHHHHHHHHHHHHHHHHH</option>
+  </select>
+</body>
+</html>
